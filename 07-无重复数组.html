@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <script>
+    const _getUniqueNums = (start, end, n) => {
+      // 补全代码
+
+      // 随机数
+      // console.log(Math.floor(Math.random() * (end - start)) + start);
+
+      return Array.from(Array(n).fill(1), x => x * Math.floor(Math.random() * (end - start)) + start).map(() => { })
+    }
+    console.log(_getUniqueNums(2, 10, 4));
+  </script>
+</body>
+
+</html>

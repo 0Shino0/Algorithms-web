@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <div class='triangle'></div>
+
+  <script>
+    var triangle = document.querySelector('.triangle');
+    // 补全代码
+
+    /* 解法一 */
+    // triangle.innerHTML = `*<br>**<br>***`
+
+    /* 解法二 */
+    // let cows = 3; // 行数
+    // let cols = 1; // 列数
+    // let str = ''; // 需要渲染字符串
+    // for (let i = 1; i <= cows; i++, cols++) {
+    //   let star = ''
+    //   for (let j = 1; j <= cols; j++) {
+    //     star += "*";
+    //   }
+    //   str += `${star}<br>`
+    // }
+    // triangle.innerHTML = str;
+
+    /* 解法三 */
+    // let arr = ['*', '**', '***'];
+
+    // arr.forEach(function (curValue, index) {
+    //   // console.log(curValue);
+    //   triangle.innerHTML += `${curValue}<br>`
+    // })
+
+    /* 解法四 */
+    let arr = new Array(3);
+    arr.fill("");  // 填充空字符
+    triangle.innerHTML = arr.map(function (curValue, index) {
+      return "*".repeat(index + 1)
+    }).join("<br/>")
+
+    // triangle.innerHTML = new Array(3).fill("").map((_i, i) => "*".repeat(i + 1)).join("<br/>")
+
+  </script>
+</body>
+
+</html>

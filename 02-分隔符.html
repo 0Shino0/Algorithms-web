@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function _comma(number) {
+      console.log(number)
+      // 补全代码
+
+      /* 解法一 */
+
+      // numberArr = number.toString().split("")
+
+      // if (numberArr.length >= 4) {
+      //   numberArr.map(function (curValue, index, arr) {
+      //     if (index % 3 === 0) {
+      //       // 012  345  678  91011
+      //       arr[index + 2] = arr[index + 1];
+      //       arr[index + 1] = arr[index];
+      //       arr[index] = ",";
+      //     }
+      //   })
+      // }
+      // // 不变
+      // return number;
+
+      /* 解法二 */
+      if (number < 0) { // 解决负数问题
+        number = -number
+        if (number < 1000) {
+          // console.log(1111111)
+          return '-' + number.toString();
+        } else {
+          let suffix = _comma(number % 1000);
+          if (_comma(number % 1000) < 10) {
+            suffix = '00' + _comma(number % 1000)
+          } else if (_comma(number % 1000) < 100) {
+            suffix = '0' + _comma(number % 1000)
+          }
+          return "-" + _comma(Math.floor(number / 1000)) + "," + suffix;
+        }
+      }
+      else {
+        if (number < 1000) {
+          return number.toString();
+        } else {
+          let suffix = Math.floor(_comma(number % 1000));
+          if (_comma(number % 1000) < 10) {
+            suffix = '00' + _comma(number % 1000)
+          } else if (_comma(number % 1000) < 100) {
+            suffix = '0' + _comma(number % 1000)
+          }
+          console.log(suffix);
+          return _comma(Math.floor(number / 1000)) + "," + suffix;
+        }
+      }
+
+      /* 解法三 */
+      // let str = number.toString();
+      // return str.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+    }
+    let test = _comma(111112000);
+    console.log(test);
+
+  </script>
+</body>
+
+</html>
