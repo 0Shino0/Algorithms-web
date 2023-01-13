@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <script>
+    const _getParams = (url) => {
+      // 补全代码 
+
+      // 解法一 正则匹配
+      let arr = url.match(/(\w+)=(\w+)/gi); // 匹配 数字字母下划线=数字字母下划线，满足条件的就以数组形式返回
+      let obj = {};
+      arr.map(item => {
+        let [key, value] = item.split("=");
+        obj[key] = value;
+      })
+      return obj;
+    }
+
+    _getParams('https://nowcoder.com/online?id=1&salas=1000')
+  </script>
+</body>
+
+</html>
