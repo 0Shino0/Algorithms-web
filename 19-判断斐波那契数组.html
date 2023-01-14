@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    const _isFibonacci = array => {
+      // 补全代码
+      if (array.length < 3) {
+        return false;
+      }
+      for (let i = 1; i <= array.length - 2; i++) {
+
+        // if (array[i - 1] + array[i] != array[i + 1]) {
+        //   return false;
+        // } else {
+        //   return true;
+        // }
+
+        return (array[i - 1] + array[i] != array[i + 1]) ? true : false;
+
+      }
+
+    }
+
+    _isFibonacci([])
+  </script>
+</body>
+
+</html>

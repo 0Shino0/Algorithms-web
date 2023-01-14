@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <script>
+    /* 
+    请补全JavaScript代码，要求将数组参数中的多维数组扩展为一维数组并返回该数组。
+    注意：
+    1. 数组参数中仅包含数组类型和数字类型
+    */
+
+    // const _flatten = (arr, res = []) => {
+    //   arr.forEach((c) => {
+    //       // console.log(Object.prototype.toString.call(c));
+    //       if (Array.isArray(c)) {
+    //         // console.log(c);
+    //         res = res.concat(_flatten(c))
+    //       } else {
+    //         res.push(c);
+    //       }
+    //     })
+    //     return res; 
+    // }
+
+    const _flatten = (arr) => {
+      // 补全代码
+
+      // 递归实现（往上看）
+
+      // toString() + split()
+      /* return arr.toString().split(",").map(item => Number(item)) */
+
+      // reduce实现
+      /* return arr.reduce((target, item) => {
+        return target.concat(Array.isArray(item) ? _flatten(item) : item)
+      }) */
+
+      // join() + split()
+      // join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。
+      /* return arr.join(',').split(',').map(item => Number(item)); */
+
+      // 扩展运算符
+      // some() 方法测试数组中是不是至少有 1 个元素通过了被提供的函数测试。它返回的是一个 Boolean 类型的值。
+      /* while (arr.some(item => Array.isArray(item))) {
+        arr = [].concat(...arr)
+      }
+      return arr; */
+
+      // flat()实现（这里不支持使用）
+      /* return arr.flat(Infinity); */
+
+      // 正则
+      // let str = JSON.stringify(arr)
+      // let res = str.replace(/(\[|\])/g, '')
+      // return JSON.parse('[' + res + ']')
+
+    }
+
+
+
+    console.log(_flatten([1, [2, 3, [4, 5]]]));
+  </script>
+</body>
+
+</html>
