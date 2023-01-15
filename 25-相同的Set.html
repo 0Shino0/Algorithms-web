@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <script>
+    /* 
+    请补全JavaScript代码，要求以boolean的形式返回两个Set对象参数是否一样，是则返回true，否则返回false。
+    */
+    const _isSameSet = (s1, s2) => {
+      // 补全代码
+
+      // 方法一
+      /* // 转数组
+      let arr1 = Array.from(s1)
+      let arr2 = Array.from(s2)
+
+      // 1.判断长度
+      if (arr1.length != arr2.length) {
+        return false;
+      }
+
+      // 2.判断数据 
+      for (let i = 0; i < arr2.length; i++) {
+        // 失败
+        // if (arr1[i] != arr2[i]) return false;
+        if (arr1.includes(arr2[i])) {
+          continue;
+        } else {
+          return false;
+        }
+      }
+
+      return true; */
+
+      // 方法二 扩展运算符 + every
+      if (s1.size !== s2.size) {
+        if (s1.size !== s2.size) {
+          return false;
+        }
+
+      }
+      return [...s1].every(i => s2.has(i))
+      // every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值
+
+    }
+
+    _isSameSet(new Set(['a', 'b', 'c']), new Set(['a', 'c', 'b']))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+  <p>1</p>
+  <script type="text/javascript">
+    /* 
+    请补全JavaScript代码，要求将页面中的"p"标签以键名的形式保存在Map对象中，键名所对应的键值为该"p"标签的文字内容。
+    */
+    const _elementKey = () => {
+      // 补全代码
+      var pNode = document.getElementsByTagName("p");
+      var nodeMap = new Map()
+      // console.log(pNode[0]);
+      // console.log(1);
+      for (item of pNode) {
+        console.log(item);
+        nodeMap.set(item, item.innerText)
+      }
+      console.log(nodeMap);
+      return nodeMap;
+    }
+
+    let test = _elementKey()
+    console.log(test);
+  </script>
+</body>
+
+</html>
