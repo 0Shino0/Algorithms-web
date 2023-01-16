@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    /* 
+    请补全JavaScript代码，请给参数对象添加拦截代理功能，并返回这个代理，要求每当通过代理调用该对象拥有的属性时，"count"值加1，否则减1。
+    */
+    let count = 0
+    const _proxy = object => {
+      // 补全代码
+      // Proxy 对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。
+      const handler = {
+        get: function (obj, prop) {
+          console.log("obj=>", obj);
+          console.log("prop=>", prop);
+          return !(prop in obj) ? count++ : count--;
+        }
+      };
+      const p = new Proxy(object, handler);
+      p.a = 1;
+      console.log(p.c);
+      // console.log(object.b);
+      // console.log(count);
+      return p;
+    }
+    let obj = { a: 123, b: 'asdasd' }
+    _proxy(obj)
+
+
+  </script>
+</body>
+
+</html>

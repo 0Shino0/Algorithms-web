@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    /* 
+    请补全JavaScript代码，要求以boolean的形式返回参数字符串是否为回文字符串。
+    回文字符串："回文串"是一个正读和反读都一样的字符串，比如"level"或者"noon"等等就是回文串。
+    */
+    const _isPalindrome = string => {
+      // 补全代码
+
+      // 方法一
+      // return string === string.split(",").reverse().join();
+
+      // 方法二
+      let left = 0; // 索引0 为左指针
+      let right = string.length - 1; // 取索引长度-1 为右指针
+      while (left < right) { // 左指针小于右指针，进入循环
+        if (string[left] === string[right]) { // 比较左右两边，相等时继续循环。否则return false;
+          left++;
+          right--;
+        } else {
+          return false;
+        }
+      }
+      return true; // 正常循环结束 return true
+    }
+    console.log(_isPalindrome('level'))
+  </script>
+</body>
+
+</html>
